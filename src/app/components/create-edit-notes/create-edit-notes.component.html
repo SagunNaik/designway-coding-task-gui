@@ -1,0 +1,53 @@
+<app-layout></app-layout>
+<div class="p-2 container">
+    <h4>{{headingTitle}}</h4>
+    <form (ngSubmit)="onUpdateSubmit()" [formGroup]="noteForm" class="my-3">
+        <div class="row">
+            <div class="col-12">
+                <label for="title" class="form-label">Note Title</label>
+                <input class="form-control" id="title" name="title" ngModel formControlName="title"
+                    placeholder="Type here note title" #title />
+                <div class="row">
+                    <div class="col-9">
+                        <span *ngIf="formControls.title.invalid && formControls.title.touched" class="text-danger">Note
+                            title
+                            required or should not exceeds max length</span>
+                    </div>
+                    <div class="col-3">
+                        <small class=" d-block text-end">{{title.value.length}}/38 Chars</small>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 my-2">
+                <label for="content" class="form-label">Note Content</label>
+                <textarea class="form-control" id="content" name="content" formControlName="content" rows="11"
+                    placeholder="Type your note here" ngModel #content></textarea>
+                <div class="row">
+                    <div class="col-9">
+                        <span *ngIf="formControls.content.invalid && formControls.content.touched"
+                            class="text-danger">Content
+                            required or should not exceeds max length</span>
+                    </div>
+                    <div class="col-3">
+
+                        <small class="d-block text-end">{{content.value.length}}/9900 Chars</small>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-sm-5 col-md-3 d-grid g-0">
+                <button class="btn btn-sm btn-success" type="submit" [disabled]="noteForm.invalid"><i
+                        class="bi bi-patch-plus"></i> Note</button>
+            </div>
+        </div>
+    </form>
+</div>

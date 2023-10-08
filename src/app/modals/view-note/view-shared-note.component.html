@@ -1,0 +1,23 @@
+<div class="modal fade show" id="viewNotesModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="viewNotesLabel" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-wrap" id="viewNotesLabel">{{title || "NA"}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="onCloseSharedNoteMode()"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <p class="card-text text-wrap">{{content || "NA"}}</p>
+                <!-- <p class="card-text text-wrap"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    (click)="onCloseSharedNoteMode()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
