@@ -12,6 +12,8 @@ export class AuthGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const isLoggedIn = this.localService.getToken() ? true : false;
+
+    console.warn(isLoggedIn)
     if (isLoggedIn) {
       return true;
     } else {

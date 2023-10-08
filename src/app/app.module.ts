@@ -17,6 +17,7 @@ import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ViewSharedNoteComponent } from './modals/view-note/view-shared-note.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ViewSharedNoteComponent } from './modals/view-note/view-shared-note.com
 
   ],
   providers: [
+    AuthGuardService,
     provideAnimations(),
     provideToastr({
       timeOut: 10000,
