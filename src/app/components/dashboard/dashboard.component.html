@@ -1,0 +1,35 @@
+<app-layout></app-layout>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-7">
+            <h4>Your Notes</h4>
+        </div>
+        <div class="col-5">
+            <input type="text" id="search" [ngModel]="searchText" (ngModelChange)="searchKey($event)"
+                placeholder="Find by title" ngModel class="form-control">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <ng-template *ngIf="_filterNotes && _filterNotes.length > 0;then content else other_content"></ng-template>
+
+        <ng-template #content>
+            <ng-template ngFor let-note [ngForOf]="_filterNotes" let-i="index">
+                <div class="col-md-3 text-truncate my-2">
+                    <app-view-notes [note]="note"></app-view-notes>
+                </div>
+            </ng-template>
+        </ng-template>
+
+        <ng-template #other_content>
+            <div class="col-md-12 text-truncate my-2 text-center p-2">
+                <span>No Notes Available..</span>
+            </div>
+            <div class="col-md-12 my-2 text-center">
+                <button routerLink="/note" class="btn btn-sm btn-success"> Click here to add</button>
+            </div>
+        </ng-template>
+
+    </div>
+</div>
