@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg bg-success" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">SpidyScrawl</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/" routerLinkActive="active"
+                        ariaCurrentWhenActive="page">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/note" routerLinkActive="active" ariaCurrentWhenActive="page">Write
+                        Note</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/aboutUs" routerLinkActive="active"
+                        ariaCurrentWhenActive="page">About Us</a>
+                </li>
+
+            </ul>
+
+            <div class="d-flex">
+                <button class="nav-link text-light" type="button" (click)="onLogout()">Logout
+                    <i class="bi bi-box-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</nav>

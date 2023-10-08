@@ -1,0 +1,145 @@
+<div class="container d-flex min-vh-100 mx-auto my-auto">
+    <div class="row justify-content-center align-items-center w-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+            <div class="card shadow-lg card-registration" style="border-radius: 15px;">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="mb-1 pb-2 pb-md-0 mb-md-5">Sign up Form</h3>
+                    <form #signup="ngForm" (ngSubmit)="onSignUp(signup.value)">
+
+                        <div class="row">
+                            <div class="col-md-6 mb-1">
+
+                                <div class="form-outline">
+                                    <label class="form-label" for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-control"
+                                        id="firstName" ngModel required #firstName="ngModel" />
+                                </div>
+                                <span *ngIf="firstName.invalid && firstName.touched" class="text-danger">First Name
+                                    Required</span>
+
+                            </div>
+                            <div class="col-md-6 mb-1">
+
+                                <div class="form-outline">
+                                    <label class="form-label" for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" class="form-control" name="lastName" ngModel
+                                        required #lastName="ngModel" />
+
+                                </div>
+                                <span *ngIf="lastName.invalid && lastName.touched" class="text-danger">Last Name
+                                    Required</span>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-1">
+
+                                <h6 class="mb-2 pb-1 mt-1">Gender: </h6>
+
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="femaleGender">Female</label>
+
+                                    <input class="form-check-input" type="radio" name="gender" id="femaleGender"
+                                        value="f" checked ngModel required #gender="ngModel" />
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="maleGender">Male</label>
+
+                                    <input class="form-check-input" type="radio" name="gender" id="maleGender" value="m"
+                                        ngModel required #gender="ngModel" />
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="otherGender">Other</label>
+
+                                    <input class="form-check-input" type="radio" name="gender" id="otherGender"
+                                        value="o" ngModel required #gender="ngModel" />
+                                </div>
+                                <span *ngIf="gender.invalid && gender.touched" class="text-danger">GenderRequired</span>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-1 pb-2">
+
+                                <div class="form-outline">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="email" id="email" class="form-control" name="email" ngModel required
+                                        #email="ngModel" email />
+                                </div>
+                                <span *ngIf="email.invalid && email.touched" class="text-danger">Email Required</span>
+
+                            </div>
+                            <div class="col-md-6 mb-1 pb-2">
+
+                                <div class="form-outline">
+                                    <label class="form-label" for="Username">Username</label>
+                                    <input type="text" id="Username" class="form-control" name="username" ngModel
+                                        required #username="ngModel" />
+                                </div>
+                                <span *ngIf="username.invalid && username.touched " class="text-danger">Username
+                                    Required</span>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-1 pb-2">
+
+                                <div class="form-outline">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" id="password" class="form-control" name="password" ngModel
+                                        required #password="ngModel" [minlength]="8" />
+                                </div>
+                                <span *ngIf="password.invalid && password.touched" class="text-danger">Password
+                                    Required</span>
+
+                            </div>
+                            <div class="col-md-6 mb-1 pb-2">
+
+                                <div class="form-outline">
+                                    <label class="form-label" for="confirm-password">Confirm Password</label>
+                                    <input type="password" id="confirm-password" class="form-control"
+                                        name="confirmPassword" ngModel required #confirmPassword="ngModel"
+                                        [minlength]="8" />
+                                </div>
+                                <span *ngIf="confirmPassword.invalid && confirmPassword.touched"
+                                    class="text-danger">Confirm Password
+                                    Required</span>
+
+                            </div>
+                            <span
+                                *ngIf="confirmPassword.invalid && confirmPassword.touched && password.invalid && password.touched && password !== confirmPassword "
+                                class="text-danger">Both Passwords
+                                does not match</span>
+                        </div>
+
+                        <div class="row">
+                            <div class=" col-12 my-3 small text-center">
+                                <span class="small"> Already Have An Account? </span>
+                                <button routerLink="/login" class="btn btn-link btn-sm"><span
+                                        class="small">Login</span></button>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-3"></div>
+                            <div class="col-6 d-grid g-0">
+                                <button class="btn btn-primary btn-md  btn-block" type="submit"
+                                    [disabled]="signup.invalid">Sign up</button>
+                            </div>
+                            <div class="col-3"></div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
