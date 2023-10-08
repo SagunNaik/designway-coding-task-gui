@@ -18,17 +18,17 @@ export class DashboardComponent implements OnInit {
   constructor(
     private noteService: NotesService,
   ) {
-    this.noteService.getAllNotes().subscribe((data: any[]) => {
 
-      this.notes = data;
-      this._filterNotes = data;
-    })
   }
 
 
   ngOnInit(): void {
 
-    this.search();
+    this.noteService.getAllNotes().subscribe((data: any[]) => {
+
+      this.notes = data;
+      this._filterNotes = data;
+    })
   }
 
   searchKey(data: string) {
@@ -37,10 +37,12 @@ export class DashboardComponent implements OnInit {
   }
 
   search() {
-    this._filterNotes = this.searchText === "" || !this.searchText ? this.notes : this.notes.filter((note) => {
+    this._filterNotes = this.searchText.trim().length === 0 ? this.notes : this.notes.filter((note) => {
       return note.title.toLowerCase().includes(this.searchText.toLowerCase());
     });
-
+    console.warn(this._filterNotes)
+    console.warn(this.searchText.trim().length)
+    console.warn(this.notes)
   }
 
 

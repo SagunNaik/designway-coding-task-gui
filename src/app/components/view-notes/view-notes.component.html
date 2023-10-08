@@ -1,7 +1,7 @@
 <div class="card h-100 shadow">
     <div class="card-body">
-        <h5 class="card-title text-truncate">{{note?.title || "NA"}}</h5>
-        <p class="card-text text-truncate">{{note?.content || "NA"}}</p>
+        <h5 class="card-title text-truncate">{{note.title || "NA"}}</h5>
+        <p class="card-text text-truncate">{{note.content || "NA"}}</p>
         <!-- <p class="card-text text-wrap"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
         <p class="card-text text-wrap"><small class="text-body-secondary">Created on {{date |
                 date:'dd-MM-YYYY'}}</small></p>
@@ -34,13 +34,13 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 text-wrap" id="viewNotesLabel">{{note?.title || "NA"}}</h1>
+                <h1 class="modal-title fs-5 text-wrap" id="viewNotesLabel">{{note.title || "NA"}}</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                     (click)="closeViewNoteModal()"></button>
             </div>
             <div class="modal-body">
 
-                <p class="card-text text-wrap">{{note?.content || "NA"}}</p>
+                <p class="card-text text-wrap">{{note.content || "NA"}}</p>
                 <!-- <p class="card-text text-wrap"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
 
             </div>

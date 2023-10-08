@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Note } from 'src/app/Note';
 import { NotesService } from 'src/app/services/notes.service';
@@ -7,7 +7,8 @@ import { ToastrService } from 'ngx-toastr'
 @Component({
   selector: 'app-view-notes',
   templateUrl: './view-notes.component.html',
-  styleUrls: ['./view-notes.component.scss']
+  styleUrls: ['./view-notes.component.scss'],
+
 })
 export class ViewNotesComponent implements OnInit {
 
