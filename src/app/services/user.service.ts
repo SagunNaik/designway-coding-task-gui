@@ -28,6 +28,9 @@ export class UserService {
         }
 
       }
+      else {
+        this.toastr.error("Failed to Login, please check your credential.");
+      }
 
     },
       (err: any) => {
