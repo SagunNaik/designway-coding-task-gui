@@ -34,7 +34,7 @@ export class ViewNotesComponent implements OnInit {
     this.date = new Date(this.note.createdOn!);
     this._viewNotesModalId = `viewNotesModal-${this.note.id}`;
     this._isShared = this.note.isShared;
-    this._shareLink = `${location.href}share/view/${this.note.id}`;
+    this._shareLink = `${location.origin}/share/view/${this.note.id}`;
 
   }
 
